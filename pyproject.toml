@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=70.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "esewa-xls-to-csv"
+requires-python = ">=3"
+authors = [{ name = "Pradish Bijukchhe", email = "pradish@sandbox.com.np" }]
+description = "Convert eSewa XLS statement to CSV for homebank"
+readme = "README.md"
+license = "MIT"
+keywords = []
+classifiers = ["Programming Language :: Python :: 3"]
+dependencies = ["xlrd>=2.0.2"]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+pre-commit = ["pre-commit"]
+
+[project.urls]
+Homepage = "https://github.com/pradishb/esewa-xls-to-csv"
+Issues = "https://github.com/pradishb/esewa-xls-to-csv/issues"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-dir]
+"esewa_xls_to_csv" = "esewa_xls_to_csv"
+
+[tool.setuptools.dynamic]
+version = { attr = "esewa_xls_to_csv.__version__" }
+
+[tool.ruff.lint]
+select = ["I"]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+include = ["esewa_xls_to_csv", "test.py"]
+typeCheckingMode = "strict"
