@@ -24,6 +24,9 @@ Issues = "https://github.com/pradishb/esewa-xls-to-csv/issues"
 [tool.setuptools]
 include-package-data = true
 
+[project.scripts]
+esewa-xls-to-csv = "esewa_xls_to_csv.__main__:main"
+
 [tool.setuptools.package-dir]
 "esewa_xls_to_csv" = "esewa_xls_to_csv"
 
